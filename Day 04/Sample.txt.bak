@@ -1,0 +1,14 @@
+echo "Enter your name: "
+read name
+
+echo "Enter number 1"
+read x
+echo "Enter number 2"
+read y
+echo "Enter number 3"
+read z
+sum=$(($x+$y+$z))
+avg=$(($sum/3))
+
+echo "Sum: "$sum
+echo "Average: "$avg

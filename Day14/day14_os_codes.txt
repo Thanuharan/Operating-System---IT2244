@@ -1,0 +1,32 @@
+#include <stdio.h>
+#include <sys/types.h>
+#include <unistd.h>
+#include <sys/wait.h>
+
+int main() {
+    pid_t pid;
+    int sum_child = 0, sum_parent = 0, total_sum = 0;
+
+    pid = fork(); // Create child process
+
+    if (pid == 0) { // Child process
+        printf("Child process:\n");
+        for (int i = 1; i <= 5; i++) {
+            printf("%d\n", i);
+            sum_child += i;
+        }
+        printf("Sum by child: %d\n", sum_child);
+    } else { // Parent process
+        wait(NULL); // Wait for child to finish
+        printf("Parent process:\n");
+        for (int i = 6; i <= 10; i++) {
+            printf("%d\n", i);
+            sum_parent += i;
+        }
+        printf("Sum by parent: %d\n", sum_parent);
+        total_sum = sum_child + sum_parent;
+        printf("Total sum: %d\n", total_sum);
+    }
+
+    return 0;
+}

@@ -1,0 +1,21 @@
+-bash: /home/ASUS/.babunrc: Permission denied
+{ ~ }  » echo "Enter num1:"
+Enter num1:
+{ ~ }  » read num1
+30
+{ ~ }  » echo " Enter num2"
+ Enter num2
+{ ~ }  » read num2
+20
+{ ~ }  » sum=$(($num1+$num2))
+{ ~ }  » sub=$(($num1+$num2))
+{ ~ }  » mul=$(($num1*$num2))
+{ ~ }  » div=$(($num1/$num2))
+{ ~ }  » echo "Sum: "$sum
+Sum: 50
+{ ~ }  » echo "Sub: "$sub
+Sub:
+{ ~ }  » echo "Multiplication: "$mul
+Multiplication: 600
+{ ~ }  » echo "Division: "$div
+Division: 1
