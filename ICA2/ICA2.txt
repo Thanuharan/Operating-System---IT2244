@@ -1,0 +1,44 @@
+Read three numbers ( a,b,c ) from the user and store then into 
+three variables. Find the LCM from the first two numbers(a,b) and the GCM for the 
+second two numbers(b,c)
+
+[2021ict104@DESKTOP-756Q0GF ~]$ vi Quiz1.sh
+echo "Enter a: "
+read a
+echo "Enter b: "
+read b
+echo "Enter c: "
+read c
+x=$a
+y=$b
+while [ $y -ne 0 ]; do
+    temp=$y
+    y=$((x % y))
+    x=$temp
+donevi 
+gcd_ab=$x
+
+lcm_ab=$(( (a * b) / gcd_ab ))
+
+x=$b
+y=$c
+while [ $y -ne 0 ]; do
+    temp=$y
+    y=$((x % y))
+    x=$temp
+done
+gcd_bc=$x
+
+echo "LCM of $a and $b is: $lcm_ab"
+echo "GCD of $b and $c is: $gcd_bc"
+
+[2021ict104@DESKTOP-756Q0GF ~]$ chmod 777 Quiz1.sh
+[2021ict104@DESKTOP-756Q0GF ~]$ ./Quiz1.sh
+Enter a:
+5
+Enter b:
+8
+Enter c:
+9
+LCM of 5 and 8 is: 40
+GCD of 8 and 9 is: 1
